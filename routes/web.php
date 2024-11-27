@@ -15,6 +15,6 @@ Route::get('/sum/{num1}/{num2}', [CalculatorController::class, 'sum']);
 Route::get('/subtract/{num1}/{num2}', [CalculatorController::class, 'subtract']);
 Route::get('/multiply/{num1}/{num2}', [CalculatorController::class, 'multiply']);
 Route::get('/divide/{num1}/{num2}', [CalculatorController::class, 'divide']);
-Route::get('/helloSindhu', [HelloSindhuController::class, 'index']);
+Route::get('/sindhu', [HelloSindhuController::class, 'sindhu']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'register']);

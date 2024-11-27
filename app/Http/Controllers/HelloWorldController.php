@@ -10,4 +10,4 @@ class HelloWorldController extends Controller
     {
         return "Hello World";
     }
-};
+}

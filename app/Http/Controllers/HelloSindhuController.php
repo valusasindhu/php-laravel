@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class HelloSindhuController extends Controller
 {
-    public function greet()
+    public function sindhu()
 {
-return 'Hello, Shizukaaaa!';
+return 'Hello!';
 }
 }
