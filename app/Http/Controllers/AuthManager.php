@@ -57,4 +57,9 @@ return redirect(route('register'))->with('error', 'Failed to create
 user');
 }
 }
+public function logout()
+{
+Auth::logout();
+return redirect('login');
+}
 }

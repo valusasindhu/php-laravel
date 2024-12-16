@@ -28,4 +28,4 @@ Route::post('/login', 'App\Http\Controllers\AuthManager@loginPost')->name('login
 Route::post('/register', 'App\Http\Controllers\AuthManager@registerPost')->name('register.post');
 Route::get('/home', 'App\Http\Controllers\ProductsManager@index')->name('home');
 Route::get('login', 'App\Http\Controllers\AuthManager@login')->name('login');
-
+Route::get('logout', [App\Http\Controllers\AuthManager::class,'logout'])->name('logout');
