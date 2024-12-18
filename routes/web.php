@@ -10,8 +10,6 @@ use App\Http\Controllers\User;
 use App\Http\Controllers\Hash;
 use App\Http\Controllers\ProductsManager;
 
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,10 +20,13 @@ Route::get('/subtract/{num1}/{num2}', [CalculatorController::class, 'subtract'])
 Route::get('/multiply/{num1}/{num2}', [CalculatorController::class, 'multiply']);
 Route::get('/divide/{num1}/{num2}', [CalculatorController::class, 'divide']);
 Route::get('/sindhu', [HelloSindhuController::class, 'sindhu']);
-Route::get('/login', [App\Http\Controllers\AuthManager::class, 'login'])->name('login');
-Route::get('/register', [App\Http\Controllers\AuthManager::class, 'register'])->name('register');
-Route::post('/login', 'App\Http\Controllers\AuthManager@loginPost')->name('login.post');
-Route::post('/register', 'App\Http\Controllers\AuthManager@registerPost')->name('register.post');
-Route::get('/home', 'App\Http\Controllers\ProductsManager@index')->name('home');
-Route::get('login', 'App\Http\Controllers\AuthManager@login')->name('login');
-Route::get('logout', [App\Http\Controllers\AuthManager::class,'logout'])->name('logout');
+
+Route::get('/login', [AuthManager::class, 'login'])->name('login');
+Route::get('/register', [AuthManager::class, 'register'])->name('register');
+
+Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
+Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
+Route::get('/home', [ProductsManager::class, 'index'])->name('home');
+Route::get('login', [AuthManager::class, 'login'])->name('login');
+Route::get('logout', [AuthManager::class, 'logout'])->name('logout');
+
