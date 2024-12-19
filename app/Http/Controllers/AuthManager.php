@@ -58,4 +58,8 @@ user');
         Auth::logout();
         return redirect('login');
     }
+    public function index()
+    {
+        return view('welcome'); // Replace 'welcome' with your desired view.
+    }
 }
