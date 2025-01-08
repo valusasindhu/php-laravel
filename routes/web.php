@@ -10,6 +10,7 @@ use App\Http\Controllers\User;
 use App\Http\Controllers\Hash;
 use App\Http\Controllers\ProductsManager;
 use App\Http\Controllers\CategoriesManager;
+use App\Http\Controllers\CartManager;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +33,9 @@ Route::get('login', [AuthManager::class, 'login'])->name('login');
 Route::get('logout', [AuthManager::class, 'logout'])->name('logout');
 Route::get('/products', [ProductsManager::class, 'products'])->name('products');
 Route::get('/categories', [CategoriesManager::class, 'categories'])->name('categories');
+Route::get('product/{slug}', [ProductsManager::class, 'show'])->name('products.details');
+Route::middleware('auth')->group(function () {
+    Route::get('/cart/{id}', [ProductsManager::class, 'addToCart'])->name('cart.add');
+    Route::get('/cart', [CartManager::class, 'cart'])->name('cart');
+});
+

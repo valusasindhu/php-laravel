@@ -16,16 +16,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('categories') }}">Categories</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('cart') }}">Cart</a>
+                </li>
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login')
-                                                                }}">Login</a>
+                                                                                }}">Login</a>
                     </li>
                 @endguest
                 @auth
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout')
-                                                                }}">Logout</a>
+                                                                                }}">Logout</a>
                     </li>
                 @endauth
             </ul>

@@ -6,8 +6,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\ProductsManager;
-
 
 class AuthManager extends Controller
 {
@@ -35,7 +33,6 @@ class AuthManager extends Controller
     }
     function registerPost(Request $request)
     {
-        // Validate the request...
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -60,6 +57,6 @@ user');
     }
     public function index()
     {
-        return view('welcome'); // Replace 'welcome' with your desired view.
+        return view('welcome');
     }
 }
